@@ -8,4 +8,5 @@ use Illuminate\Support\Collection;
 interface UserRepositoryInterface
 {
     public function getAll(): Collection;
+    
 }
