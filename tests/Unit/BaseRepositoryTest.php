@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use Mockery;
 use Tests\TestCase;
 use App\Models\User;
 use app\Repository\BaseRepository\BaseRepository;
@@ -15,7 +16,6 @@ class BaseRepositoryTest extends TestCase
      *
      * @return void
      */
-
 
     public function test_get_all_method()
     {
