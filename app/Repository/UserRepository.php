@@ -3,6 +3,7 @@
 namespace app\Repository\UserRepository;
 
 use App\Models\User;
+use Illuminate\Support\Collection;
 use Illuminate\DataBase\Eloquent\Model;
 use app\Repository\BaseRepository\BaseRepository;
 use App\Contracts\UserRepositoryInterface\UserRepositoryInterface;
@@ -14,7 +15,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function __construct(User $model)
     {
-        $this->model = $model;
+        parent::__construct($model);
     }
     
 }

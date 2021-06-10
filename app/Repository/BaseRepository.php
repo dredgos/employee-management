@@ -2,9 +2,10 @@
 
 namespace app\Repository\BaseRepository;
 use Illuminate\DataBase\Eloquent\Model;
+use app\Contracts\UserRepositoryInterface\BaseRepositoryInterface;
 
 
-class BaseRepository 
+class BaseRepository implements BaseRepositoryInterface
 {
     protected $model;
 
@@ -18,8 +19,4 @@ class BaseRepository
         return Model::all();
     }
 
-    public function getById(int $id)
-    {
-        return $id;
-    }
 }
