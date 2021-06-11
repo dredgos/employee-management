@@ -24,7 +24,7 @@ class RoleFactory extends Factory
     {
         return [
             'role_name' => $this->faker->word(),
-            'job_description' => $this->faker->paragraph(),
+            'job_description' => $this->faker->sentence(),
             'user_id' => User::factory(),
         ];
     }

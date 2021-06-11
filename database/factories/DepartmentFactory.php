@@ -25,7 +25,7 @@ class DepartmentFactory extends Factory
         return [
             'department_name' => $this->faker->word(),
             'address_1' => $this->faker->streetAddress(),
-            'address_2' => $this->faker->streetName,
+            'address_2' => $this->faker->streetName(),
             'town' => $this->faker->city(),
             'postcode' => $this->faker->postcode(),
             'department_head_id' => User::factory()
