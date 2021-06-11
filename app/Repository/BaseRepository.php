@@ -1,10 +1,10 @@
 <?php
 
-namespace app\Repository\BaseRepository;
+namespace App\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\DataBase\Eloquent\Model;
-use app\Contracts\UserRepositoryInterface\BaseRepositoryInterface;
+use App\Contracts\BaseRepositoryInterface;
 use Exception;
 use Facade\FlareClient\Http\Exceptions\NotFound;
 use Illuminate\Contracts\Routing\ResponseFactory;
