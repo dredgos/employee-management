@@ -15,8 +15,9 @@ class CreateHolidayDatesTable extends Migration
     {
         Schema::create('holiday_dates', function (Blueprint $table) {
             $table->id();
-            $table->date('holiday_dates')->nullable();
-            $table->foreignID('user_id')->constrained()->onDelete('cascade');
+            $table->date('holiday_start_date')->nullable();
+            $table->date('holiday_end_date')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

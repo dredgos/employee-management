@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoleFactory extends Factory
@@ -22,7 +23,9 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'role_name' => $this->faker->word(),
+            'job_description' => $this->faker->sentence(),
+            'user_id' => User::factory(),
         ];
     }
 }

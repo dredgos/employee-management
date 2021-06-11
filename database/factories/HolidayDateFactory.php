@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\HolidayDate;
+
+use Illuminate\Support\Facades\Date;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class HolidayDateFactory extends Factory
@@ -25,4 +27,5 @@ class HolidayDateFactory extends Factory
             //
         ];
     }
+  
 }

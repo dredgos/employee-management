@@ -21,7 +21,7 @@ class Department extends Model
     
         ];
 
-    public function departments()
+    public function roles()
     {
         return $this->belongsToMany(Role::class);
     }

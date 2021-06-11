@@ -15,8 +15,9 @@ class CreateTrainingDatesTable extends Migration
     {
         Schema::create('training_dates', function (Blueprint $table) {
             $table->id();
-            $table->date('training_dates')->nullable();
-            $table->foreignID('user_id')->constrained()->onDelete('cascade');
+            $table->date('training_start_date')->nullable();
+            $table->date('training_end_date')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

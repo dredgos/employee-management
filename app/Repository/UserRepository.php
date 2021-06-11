@@ -1,12 +1,12 @@
 <?php
 
-namespace app\Repository\UserRepository;
+namespace App\UserRepository;
 
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\DataBase\Eloquent\Model;
-use app\Repository\BaseRepository\BaseRepository;
-use App\Contracts\UserRepositoryInterface\UserRepositoryInterface;
+use App\Repository\BaseRepository;
+use App\Contracts\UserRepositoryInterface;
 
 
 class UserRepository extends BaseRepository implements UserRepositoryInterface

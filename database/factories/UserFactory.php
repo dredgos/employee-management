@@ -23,10 +23,19 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'first_name' => $this->faker->name(),
+            'last_name' => $this->faker->name(),
+            'date_of_birth' => $this->faker->date(),
+            'telephone' => $this->faker->phoneNumber(),
+            'address_1' => $this->faker->streetAddress(),
+            'address_2' => $this->faker->streetName(),
+            'town' => $this->faker->city(),
+            'postcode' => $this->faker->postcode(),
             'email' => $this->faker->unique()->safeEmail(),
+            'join_date' => $this->faker->date(),
+            'salary' => $this->faker->numberBetween(20000, 100000),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => $this->faker->password(),
             'remember_token' => Str::random(10),
         ];
     }
@@ -44,4 +53,19 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function isAdmin()
+    {
+        $this->state([
+            "isAdmin" => true
+        ]);
+    }
+
+    public function isSuperAdmin()
+    {
+        $this->state([
+            "isSuperAdmin" => true
+        ]);
+    }
+
 }
