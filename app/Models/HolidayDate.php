@@ -22,11 +22,6 @@ class HolidayDate extends Model
         return $this->belongsTo(User::class);
     }
 
+    
 
-    public function holdayEndDate()
-    {
-            $this->state([
-            'holiday_start_date' => Carbon::createFromDate('2021-08-15')
-        ]);
-    }
 }
