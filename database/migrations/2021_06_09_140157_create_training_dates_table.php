@@ -17,7 +17,7 @@ class CreateTrainingDatesTable extends Migration
             $table->id();
             $table->date('training_start_date')->nullable();
             $table->date('training_end_date')->nullable();
-            $table->foreignID('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

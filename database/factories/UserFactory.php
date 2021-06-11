@@ -67,4 +67,5 @@ class UserFactory extends Factory
             "isSuperAdmin" => true
         ]);
     }
+
 }

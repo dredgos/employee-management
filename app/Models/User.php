@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\HolidayDate;
 use App\Models\TrainingDate;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -66,4 +67,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(TrainingDate::class);
     }
+
 }
