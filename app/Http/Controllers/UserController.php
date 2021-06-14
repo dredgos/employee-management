@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contracts\UserRepositoryInterface;
+use App\Contracts\IRepository\UserRepositoryInterface;
 
 class UserController extends Controller
 {
     private $userRepository;
+
+      public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    public function getAllUsers()
+    {
+        $users = $this->userRepository->getAll();
+        return view("users", ["users" => $users]);
+    }
 
     public function index()
     {
@@ -32,16 +43,6 @@ class UserController extends Controller
     public function destroy(int $id)
     {
         
-    }
-    public function __construct(UserRepositoryInterface $userRepository)
-    {
-        $this->userRepository = $userRepository;
-    }
-
-    public function getAllUsers()
-    {
-        $users = $this->userRepository->getAll();
-        return view("users", ["users" => $users]);
     }
 
 
