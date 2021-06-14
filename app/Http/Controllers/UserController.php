@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\IRepository\UserRepositoryInterface;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends Controller
 {
@@ -14,15 +15,14 @@ class UserController extends Controller
         $this->userRepository = $userRepository;
     }
 
-    public function getAllUsers()
-    {
-        $users = $this->userRepository->getAll();
-        return view("users", ["users" => $users]);
-    }
-
     public function index()
     {
-        
+        try {
+            $users = $this->userRepository->getAll();
+        } catch(ModelNotFoundException $exception) {
+             return view('users.notfound', ['error' => $exception->getMessage()]);     
+        }
+        return view("users", ["users" => $users]);
     }
 
     public function show(int $id)

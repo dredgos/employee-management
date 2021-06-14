@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contracts\IRepository\UserRepositoryInterface;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
 class DashboardController extends Controller
@@ -15,9 +16,13 @@ class DashboardController extends Controller
         $this->userRepository = $userRepository;
     }
 
-    public function index()
+     public function index()
     {
-        $user = $this->userRepository->currentAuthUser();
+        try {
+            $user = $this->userRepository->currentAuthUser();
+        } catch (ModelNotFoundException $exception) {
+            return view('users.notfound', ['error' => $exception->getMessage()]);
+        }
         return view ("dashboard", ["user" => $user]);
     }
 }
