@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HolidayRequestController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,11 +50,11 @@ Route::group(["prefix" => "dashboard"], function () {
     });
 
     Route::group(["prefix" => "employees"], function () {
-        Route::get("", [EmployeeController::class, "index"]);
+        Route::get("", [UserController::class, "index"]);
         Route::group(["prefix" => "{id}"], function () {
-            Route::get("", [EmployeeController::class, "show"]);
-            Route::patch("", [EmployeeController::class, "update"]);
-            Route::delete("", [EmployeeController::class, "destroy"]);
+            Route::get("", [UserController::class, "show"]);
+            Route::patch("", [UserController::class, "update"]);
+            Route::delete("", [UserController::class, "destroy"]);
         });
     });
     

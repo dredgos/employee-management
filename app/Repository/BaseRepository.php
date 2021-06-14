@@ -8,6 +8,7 @@ use App\Contracts\BaseRepositoryInterface;
 use Exception;
 use Facade\FlareClient\Http\Exceptions\NotFound;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BaseRepository implements BaseRepositoryInterface
 {
@@ -22,7 +23,7 @@ class BaseRepository implements BaseRepositoryInterface
     {
         $model = Model::all();
         if($model === null) {
-            throw new NotFound("This collection does not currently exist in the database ");
+            throw new  ModelNotFoundException("This collection does not currently exist in the database ");
         }
         return $model;
     }
@@ -31,7 +32,7 @@ class BaseRepository implements BaseRepositoryInterface
     {
         $model = Model::find($id);
         if($model === null) {
-            throw new NotFound("This instance does not currently exist in the database");
+            throw new ModelNotFoundException("This instance does not currently exist in the database");
         }
         return $model;
 

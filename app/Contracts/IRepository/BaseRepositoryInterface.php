@@ -2,6 +2,7 @@
 namespace App\Contracts;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+
 interface BaseRepositoryInterface
 {
     public function getAll();
