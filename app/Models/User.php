@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Contracts\IModel\UserInterface;
 use App\Models\HolidayDate;
 use App\Models\TrainingDate;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements UserInterface
 {
     use HasFactory, Notifiable;
 
@@ -64,6 +65,11 @@ class User extends Authenticatable
     public function TrainingDates()
     {
         return $this->hasMany(TrainingDate::class);
+    }
+
+    public function fullName() : string
+    {
+        return $this->first_name . " " . $this->last_name;
     }
 
 }
