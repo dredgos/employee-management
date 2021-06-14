@@ -2,23 +2,26 @@
 
 namespace App\Providers;
 
+use App\Contracts\IModel\UserInterface;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ModelServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->register(RepositoryServiceProvider::class);
-        $this->app->register(ModelServiceProvider::class);
+        $this->app->bind(
+            UserInterface::class,
+            User::class
+        );
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
