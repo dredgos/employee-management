@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contracts\IRepository\EmployeeRepositoryInterface;
 use App\Contracts\UserRepositoryInterface;
 
 class EmployeeController extends Controller
@@ -14,30 +13,30 @@ class EmployeeController extends Controller
     {
         $this->employee = $employee;
     }
-    
+
     public function index()
     {
         
     }
 
-    public function show()
+    public function show(int $id)
+    {
+        
+    }
+
+    public function create(Request $request)
     {
 
     }
 
-    public function create()
-    {
-
-    }
-
-    public function update()
+    public function update(Request $request)
     {
         # code...
     }
 
-    public function destroy()
+    public function destroy(int $id)
     {
-
+        
     }
 
 }
