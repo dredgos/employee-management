@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Contracts\IModel\UserInterface;
 use Illuminate\Support\ServiceProvider;
 

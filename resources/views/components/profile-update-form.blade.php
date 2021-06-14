@@ -1,4 +1,4 @@
-@inject("currentUser", "App\Contracts\IModel\UserInterface");
+@inject("currentUser", "App\Contracts\IModel\UserInterface")
 
 <h2>Welcome {{ $currentUser->fullName() }}</h2>
 
