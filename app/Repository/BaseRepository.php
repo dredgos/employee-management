@@ -4,7 +4,7 @@ namespace App\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\DataBase\Eloquent\Model;
-use App\Contracts\BaseRepositoryInterface;
+use App\Contracts\IRepository\BaseRepositoryInterface;
 use Exception;
 use Facade\FlareClient\Http\Exceptions\NotFound;
 use Illuminate\Contracts\Routing\ResponseFactory;

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\UserRepository;
+namespace App\Repository;
 
 use App\Models\User;
 use App\Repository\BaseRepository;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\DataBase\Eloquent\Model;
-use App\Contracts\UserRepositoryInterface;
+use App\Contracts\IRepository\UserRepositoryInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
