@@ -56,7 +56,6 @@ class User extends Authenticatable implements UserInterface
         'email_verified_at' => 'datetime',
     ];
 
-
     public function holidayDates()
     {
         return $this->hasMany(HolidayDate::class);

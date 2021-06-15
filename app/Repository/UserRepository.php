@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use App\Repository\BaseRepository;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,16 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         if($user === null) {
             throw new ModelNotFoundException("User does not exist");
         }
+        return $user;
+    }
+
+    public function updateUser(int $id, Request $request) : User
+    {
+        $user = User::find($id);
+        $data = $request->all();
+        $user->update($data);
+        $user->profile_completed = true;
+        $user->save();
         return $user;
     }
 }

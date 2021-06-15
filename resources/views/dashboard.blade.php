@@ -1,3 +1,5 @@
+
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -13,8 +15,9 @@
                         @if (!$user->profile_completed)
                             @include("/components/profile-update-form") 
                             @else
-                            <p>Profile Component</p>
+                            <p>Profile Component {{$user}}</p>
                         @endif
+                        
                         
                     </div>
                 </div>
