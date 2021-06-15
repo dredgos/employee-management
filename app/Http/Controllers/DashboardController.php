@@ -31,15 +31,13 @@ class DashboardController extends Controller
 
     public function update(UpdateProfileRequest $request) 
     {
-        // $currentUser = Auth::id();
-        // $user = User::find($currentUser);
-        // $data = $request->all();
-        // dd($request);
-        // $user->update($data);
-        // $user->profile_completed = true;
-        // $user->save();
-        // return $user;
-        return "working";
+        $currentUser = Auth::id();
+        $user = User::find($currentUser);
+        $data = $request->all();
+        $user->update($data);
+        $user->profile_completed = true;
+        $user->save();
+        return view ("dashboard", ["user" => $user]);
 
     }
 }

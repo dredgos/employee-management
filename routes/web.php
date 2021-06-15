@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\HolidayRequestController;
+use App\Http\Controllers\TrainingRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +23,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::patch("employees/{id}", [DashboardController::class, "update"])->middleware('auth')->name('employees.update');
+
 Route::group(["prefix" => "dashboard",  ["middleware" => "auth"]], function () {
     Route::get("", [DashboardController::class, "index"])->name('dashboard');
     Route::patch("", [DashboardController::class, "update"]);
     Route::group(["prefix" => "holiday-request"], function () {
         Route::get("/", [HolidayRequestController::class, "index"]);
         Route::post("/", [HolidayRequestController::class, "create"]);
-        Route::patch("/", [HolidayController::class, "update"]);
-        Route::delete("/",[HolidayController::class, "destroy"]);
+        Route::patch("/", [HolidayRequestController::class, "update"]);
+        Route::delete("/",[HolidayRequestController::class, "destroy"]);
     });
     Route::group(["prefix" => "training-request"], function () {
         Route::get("/", [TrainingRequestController::class, "index"]);
