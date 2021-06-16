@@ -8,7 +8,7 @@ use App\Contracts\IRepository\UserRepositoryInterface;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\User;
-
+use Exception;
 
 class DashboardController extends Controller
 {
@@ -31,7 +31,11 @@ class DashboardController extends Controller
 
     public function update(UpdateProfileRequest $request,  int $id) 
     {
-        $this->userRepository->updateUser($id, $request);
+        try {
+            $this->userRepository->updateUser($id, $request);
+        } catch (Exception $exception) {
+             return view('users.notfound', ['error' => $exception->getMessage()]);
+        }
         return redirect("/dashboard");
     }
 }
