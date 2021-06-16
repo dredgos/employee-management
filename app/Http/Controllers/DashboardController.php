@@ -29,15 +29,9 @@ class DashboardController extends Controller
         return view ("dashboard", ["user" => $user]);
     }
 
-    public function update(UpdateProfileRequest $request) 
+    public function update(UpdateProfileRequest $request,  int $id) 
     {
-        $currentUser = Auth::id();
-        $user = User::find($currentUser);
-        $data = $request->all();
-        $user->update($data);
-        $user->profile_completed = true;
-        $user->save();
-        return redirect ("/dashboard");
-
+        $this->userRepository->updateUser($id, $request);
+        return redirect("/dashboard");
     }
 }

@@ -3,12 +3,10 @@
 namespace App\Repository;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Repository\BaseRepository;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\DataBase\Eloquent\Model;
 use App\Contracts\IRepository\UserRepositoryInterface;
+use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
@@ -30,7 +28,7 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return $user;
     }
 
-    public function updateUser(int $id, Request $request) : User
+    public function updateUser(int $id, UpdateProfileRequest $request) : User
     {
         $user = User::find($id);
         $data = $request->all();

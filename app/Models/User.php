@@ -61,7 +61,7 @@ class User extends Authenticatable implements UserInterface
         return $this->hasMany(HolidayDate::class);
     }
 
-    public function TrainingDates()
+    public function trainingDates()
     {
         return $this->hasMany(TrainingDate::class);
     }
@@ -69,6 +69,11 @@ class User extends Authenticatable implements UserInterface
     public function fullName() : string
     {
         return $this->first_name . " " . $this->last_name;
+    }
+
+    public function role()
+    {
+        return $this->hasOne(Role::class);
     }
 
 }
