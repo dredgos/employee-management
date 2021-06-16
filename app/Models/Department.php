@@ -17,13 +17,14 @@ class Department extends Model
         'address_2',
         'town',
         'postcode',
-        'department_head_id'
+        'department_head_id',
+        'role_id'
     
         ];
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->hasMany(Role::class);
     }
 
         public function users()

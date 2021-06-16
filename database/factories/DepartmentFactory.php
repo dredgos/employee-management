@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Department;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DepartmentFactory extends Factory
@@ -28,7 +29,7 @@ class DepartmentFactory extends Factory
             'address_2' => $this->faker->streetName(),
             'town' => $this->faker->city(),
             'postcode' => $this->faker->postcode(),
-            'department_head_id' => User::factory()
+            'department_head_id' => User::factory(),
         ];
     }
 }

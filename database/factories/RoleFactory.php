@@ -23,9 +23,9 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            'role_name' => $this->faker->word(),
-            'job_description' => $this->faker->sentence(),
             'user_id' => User::factory(),
+            'role_name' => $this->faker->word(),
+            'job_description' => $this->faker->sentence()
         ];
     }
 }

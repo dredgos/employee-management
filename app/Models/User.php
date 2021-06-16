@@ -76,4 +76,5 @@ class User extends Authenticatable implements UserInterface
         return $this->hasOne(Role::class);
     }
 
+
 }

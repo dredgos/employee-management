@@ -24,18 +24,6 @@ class CreateDepartmentsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('department_role', function (Blueprint $table) {
-            $table->id();
-
-            $table->foreignId("department_id")
-                ->constrained()
-                ->onDelete("cascade");
-        
-            $table->foreignId("role_id")
-                ->constrained()
-                ->onDelete("cascade");
-
-                });
     }
 
     /**

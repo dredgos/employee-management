@@ -14,13 +14,12 @@ class Role extends Model
     protected $fillable = [
         'role_name',
         'job_description',
-        'user_id',
 
         ];
 
-    public function departments()
+    public function department()
     {   
-        return $this->belongsToMany(Department::class);
+        return $this->belongsTo(Department::class);
     }
 
     public function user()

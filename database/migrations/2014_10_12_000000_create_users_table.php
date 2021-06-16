@@ -33,6 +33,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->boolean('isAdmin')->default(false);
             $table->boolean('isSuperAdmin')->default(false);
+
+            $table->boolean('profile_completed')->default(false);
             $table->timestamps();
         });
     }

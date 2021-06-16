@@ -17,7 +17,10 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('role_name')->nullable();
             $table->string('job_description')->nullable();
-            $table->foreignId("user_id")
+            $table->foreignId("department_id")
+                ->constrained()
+                ->onDelete("cascade");
+                $table->foreignId("user_id")
                 ->constrained()
                 ->onDelete("cascade");
             $table->timestamps();

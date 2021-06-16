@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Department;
 use App\Models\Role;
+use App\Models\User;
+use App\Models\Department;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,8 +15,9 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        Department::factory(5)->hasAttached(Role::factory(30))->create();
-        
+    {       
+        Department::factory(5)
+            ->has(Role::factory(10))
+            ->create();
     }
 }
