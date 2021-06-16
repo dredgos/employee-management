@@ -15,7 +15,7 @@
                         @if (!$user->profile_completed)
                             @include("/components/profile-update-form") 
                             @else
-                            <p>Profile Component {{$user}}</p>
+                            @include("/components/user-profile")
                         @endif
                         
                         

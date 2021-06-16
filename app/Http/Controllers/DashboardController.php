@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $user->update($data);
         $user->profile_completed = true;
         $user->save();
-        return view ("dashboard", ["user" => $user]);
+        return redirect ("/dashboard");
 
     }
 }
