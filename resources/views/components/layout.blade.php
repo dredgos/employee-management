@@ -21,11 +21,14 @@
                     {{ $header }}
                 </div>
             </header>
-
             <!-- Page Content -->
             <main>
-                {{ $content }}
+                    {{ $content }}
             </main>
+
+            <footer>
+                  
+            </footer>
         </div>
     </body>
 </html>
