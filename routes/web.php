@@ -25,6 +25,9 @@ Route::get('/', function () {
 
 Route::patch("employees/{id}", [DashboardController::class, "update"])->middleware('auth')->name('employees.update');
 
+Route::get("create-user", [UserController::class, "getUserForm"])->middleware('auth')->name('create-user');
+
+
 Route::group(["prefix" => "dashboard",  ["middleware" => "auth"]], function () {
     Route::get("", [DashboardController::class, "index"])->name('dashboard');
     Route::patch("", [DashboardController::class, "update"]);

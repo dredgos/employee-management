@@ -31,7 +31,7 @@ class EmployeeController extends Controller
 
     public function update(Request $request)
     {
-        # code...
+        
     }
 
     public function destroy(int $id)

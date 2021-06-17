@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                        <x-nav-link :href="route('create-user')" :active="request()->routeIs('create-user')">
+                        {{ __('Create User') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -37,13 +40,12 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
-                        </form>
+                        </form>         
                     </x-slot>
                 </x-dropdown>
             </div>

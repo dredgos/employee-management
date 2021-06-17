@@ -25,6 +25,11 @@ class UserController extends Controller
         return view("users", ["users" => $users]);
     }
 
+    public function getUserForm()
+    {
+        return view("create-user");
+    }
+
     public function show(int $id)
     {
         
@@ -32,7 +37,7 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
-
+        
     }
 
     public function update(Request $request)
