@@ -23,7 +23,7 @@
             </header>
             <!-- Page Content -->
             <main>
-                    {{ $content }}
+                {{ $content }}
             </main>
 
             <footer>

@@ -14,12 +14,13 @@
                            <x-profile-update-form :user="$user">
                             </x-profile-update-form>
                             @else
-                            @include("/components/user-profile")
-                        @endif
-                        
+                            <x-user-profile :user="$user">
+                            </x-user-profile>
+                        @endif                        
                     </div>
                 </div>
             </div>
         </div>
     </x-slot>
+    
 </x-layout>

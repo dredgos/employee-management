@@ -1,4 +1,3 @@
-
   <section class="md:items-center mb-6">
     <h2 class="mb-2 text-2xl">Welcome</h2>
     <p class="mb-4">Please complete the following fields to correctly update your profile</p>
@@ -208,7 +207,6 @@
       <div class="md:flex md:items-center mb-6">
         <input type="submit" class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"/>
       </div>
-  
   </form>
   
 
