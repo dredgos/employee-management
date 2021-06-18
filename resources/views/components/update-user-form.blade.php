@@ -3,7 +3,7 @@
     <p class="mb-4">Please complete the following fields to correctly update your profile</p>
   </section>
 
-  <form method="POST" action="{{route('employees.update', ['id' => Auth::id()])}}"  class="w-full max-w-xl">
+  <form method="POST" action="{{route('users.update', ['id' => Auth::id()])}}"  class="w-full max-w-xl">
       @csrf
       @method('PATCH')
   
@@ -136,7 +136,10 @@
             @error('postcode')
               <p class="invalid-feedback font-semibold text-red-600">{{$message}}</p>
             @enderror
+          </div>
         </div>
-      </div>
+        <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+          Save
+        </button>
   </form>
   

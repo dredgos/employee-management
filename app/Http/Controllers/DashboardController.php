@@ -32,10 +32,12 @@ class DashboardController extends Controller
     public function update(UpdateProfileRequest $request,  int $id) 
     {
         try {
+            $user = $this->userRepository->currentAuthUser();
             $this->userRepository->updateUser($id, $request);
         } catch (Exception $exception) {
-             return view('users.notfound', ['error' => $exception->getMessage()]);
+            return view('users.notfound', ['error' => $exception->getMessage()]);
+            
         }
-        return redirect("/dashboard");
+        return redirect()->route('dashboard', ["user" => $user]);
     }
 }

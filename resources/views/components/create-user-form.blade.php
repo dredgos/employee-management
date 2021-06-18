@@ -3,9 +3,8 @@
     <p class="mb-4">Please complete the following fields to correctly update your profile</p>
   </section>
 
-  <form method="POST" action="{{route('employees.update', ['id' => Auth::id()])}}"  class="w-full max-w-xl">
+  <form method="POST" action="{{route('users.store')}}"  class="w-full max-w-xl">
       @csrf
-      @method('PATCH')
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
           <label class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4" for="inline-first_name">
@@ -115,7 +114,7 @@
             @enderror
         </div>
       </div>
-  
+
       <div class="md:flex md:items-center mb-6">
         <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
           Create
